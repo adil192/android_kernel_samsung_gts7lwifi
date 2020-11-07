@@ -102,7 +102,7 @@
 		qcom,mdss-dsi-stream = <0>;
 		qcom,mdss-dsi-mdp-trigger = "none";
 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
-		qcom,mdss-dsi-panel-framerate = <60>;
+		qcom,mdss-dsi-panel-framerate = <120>;
 
 		qcom,mdss-pan-physical-width-dimension = <71>; /* 71.568mm, round-off */
 		qcom,mdss-pan-physical-height-dimension = <159>; /* 159.04mm, round-off */
@@ -2878,7 +2878,6 @@
 			wqhd60 {
 				qcom,display-topology = <1 1 1>, <2 2 1>;
 				qcom,default-topology-index = <1>;
-				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-width = <1440>;
 				qcom,mdss-dsi-panel-height = <3200>;
 
@@ -3073,7 +3072,6 @@
 			wqhd48 {
 				qcom,display-topology = <1 1 1>, <2 2 1>;
 				qcom,default-topology-index = <1>;
-				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-width = <1440>;
 				qcom,mdss-dsi-panel-height = <3200>;
 
@@ -3935,6 +3933,7 @@
 			fhd120hs {
 				qcom,display-topology = <1 1 1>, <2 2 1>;
 				qcom,default-topology-index = <1>;
+				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-width = <1080>;
 				qcom,mdss-dsi-panel-height = <2400>;
 
@@ -4800,6 +4799,7 @@
 			hd120hs {
 				qcom,display-topology = <1 1 1>, <2 2 1>;
 				qcom,default-topology-index = <1>;
+				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-width = <720>;
 				qcom,mdss-dsi-panel-height = <1600>;
 
