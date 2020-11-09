@@ -2356,7 +2356,6 @@
 			wqhd {
 				qcom,display-topology = <1 1 1>, <2 2 1>;
 				qcom,default-topology-index = <1>;
-				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-width = <1440>;
 				qcom,mdss-dsi-panel-height = <3040>;
 				qcom,mdss-dsi-h-pulse-width = <44>;
@@ -2525,6 +2524,7 @@
 			fhd {
 				qcom,display-topology = <1 1 1>, <2 2 1>;
 				qcom,default-topology-index = <1>;
+				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-width = <1080>;
 				qcom,mdss-dsi-panel-height = <2280>;
 				qcom,mdss-dsi-h-pulse-width = <44>;
@@ -2534,7 +2534,7 @@
 				qcom,mdss-dsi-v-pulse-width = <80>;
 				qcom,mdss-dsi-v-back-porch = <124>;
 				qcom,mdss-dsi-v-front-porch = <796>;
-				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-framerate = <120>;
 				qcom,mdss-dsi-panel-phy-timings = [00 1E 08 08 24 22 08 08 05 03 04 00 19 18];
 				qcom,mdss-dsi-timing-switch-command = [
 					29 00 00 00 00 00 03 9F A5 A5		/* LV1 (9F) unlock */
@@ -2701,7 +2701,7 @@
 				qcom,mdss-dsi-v-pulse-width = <80>;
 				qcom,mdss-dsi-v-back-porch = <124>;
 				qcom,mdss-dsi-v-front-porch = <1556>;
-				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-framerate = <120>;
 				qcom,mdss-dsi-panel-phy-timings = [00 1E 08 08 24 22 08 08 05 03 04 00 19 18];
 
 				qcom,mdss-dsi-timing-switch-command = [
