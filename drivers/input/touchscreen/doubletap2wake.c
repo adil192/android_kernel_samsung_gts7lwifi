@@ -66,6 +66,9 @@ MODULE_LICENSE("GPLv2");
 
 #define DT2W_PWRKEY_DUR		60
 #define DT2W_TIME		700
+#define DT2W_OFF 		  0
+#define DT2W_ON 		  1
+#define VIB_STRENGTH      70
 
 /* Resources */
 int dt2w_switch = DT2W_DEFAULT;
@@ -119,6 +122,7 @@ static void doubletap2wake_presspwr(struct work_struct * doubletap2wake_presspwr
 }
 static DECLARE_WORK(doubletap2wake_presspwr_work, doubletap2wake_presspwr);
 
+
 /* PowerKey trigger */
 static void doubletap2wake_pwrtrigger(void) {
 	schedule_work(&doubletap2wake_presspwr_work);
@@ -132,6 +136,19 @@ static bool calc_within_range(int x_pre, int y_pre, int x_new, int y_new, int ra
     if (calc_radius < ((radius_max)*(radius_max)))
         return true;
     return false;
+}
+
+
+unsigned int dt2w_time=DT2W_TIME;
+unsigned int vib_strength = VIB_STRENGTH;
+//extern void set_vibrate(int value);
+
+/* init a new touch */
+static void new_touch(int x, int y) {
+	tap_time_pre = ktime_to_ms(ktime_get());
+	x_pre = x;
+	y_pre = y;
+	touch_nr++;
 }
 
 /* Doubletap2wake main function */
@@ -151,7 +168,7 @@ static void detect_doubletap2wake(int x, int y)
 //                             so it is better that we don't wait for the control to go there, and we pwr_on it from here directly
 		exec_count = false;
                 doubletap2wake_pwrtrigger();  // We queue the screen on first, as it takes more time to do than vibration.
-			    set_vibrate(vib_strength);    // While the screen is queued, and is waking, we hammer the vibrator. Minor UX tweak.
+			    //set_vibrate(vib_strength);    // While the screen is queued, and is waking, we hammer the vibrator. Minor UX tweak.
 			    doubletap2wake_reset();     // Here the touch number is also reset to 0, but the program executes as needed. See yourself.
             }
 			else {          //If the second tap isn't close or fast enough, reset previous coords, treat second tap as a separate first tap
