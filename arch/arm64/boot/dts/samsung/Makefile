@@ -28,6 +28,7 @@ endif
 dts-dirs += x1q
 dts-dirs += f2q
 dts-dirs += c2q
+dts-dirs += z3q
 
 always          := $(dtb-y)
 subdir-y        := $(dts-dirs)
