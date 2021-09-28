@@ -30,12 +30,12 @@ FLAG=0
 endif
 endif
 
-ifneq ($(shell [ -e $(srctree)/../../system/core/liblog/include/log/perflog.h ] && echo exist), exist)
+ifneq ($(shell [ -e $(srctree)/include/linux/perflog.h ] && echo exist), exist)
 FLAG=0
 $(info kperfmon_DUMMY="perflog.h file is missing.")
 endif
 
-$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
+# $(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
 ifeq ($(FLAG), 1)
 $(info kperfmon_DUMMY="$(shell cp -f $(srctree)/drivers/kperfmon/ologk.h $(srctree)/include/linux/)")
 	obj-y				+= kperfmon.o
