@@ -263,7 +263,7 @@ CONFIG_SEC_X1Q_PROJECT=y
 # CONFIG_SEC_R8Q_PROJECT is not set
 
 #
-# Samsung X/Y/Z
+# Samsung X/Y/Z/s7
 #
 # CONFIG_MACH_X1Q_KOR_SINGLE is not set
 # CONFIG_MACH_X1Q_USA_SINGLE is not set
