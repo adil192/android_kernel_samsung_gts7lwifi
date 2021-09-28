@@ -29,8 +29,9 @@ dts-dirs += x1q
 dts-dirs += f2q
 dts-dirs += c2q
 dts-dirs += z3q
+dts-dirs += gts7l
 
-always          := $(dtb-y)
 subdir-y        := $(dts-dirs)
+always          := $(dtb-y) $(dtbo-y)
 
-clean-files := *.dtb *.reverse.dts *.dtbo
+clean-files := *.dtb* *.reverse.dts
